@@ -1,11 +1,14 @@
-use std::fs::read_to_string;
+use std::collections::HashMap;
+use std::error::Error;
+use std::io;
 
-fn main() {
-    let mut sum = 0;
+fn main() -> Result<(), Box<dyn Error>> {
+    let mut map = HashMap::<String, String>::new();
 
-    for line in read_to_string("./input.txt").unwrap().lines() {
+    loop {
+        let mut line = String::new();
+        io::stdin().read_line(&mut line)?;
+
         // TODO
     }
-
-    println!("Sum is {}", sum);
 }
